@@ -11,7 +11,7 @@ COPY config/supervisor.conf /etc/supervisor.conf
 COPY config/nginx.conf.tpl /etc/nginx/nginx.conf
 COPY config/php.conf.tpl /etc/php7/php-fpm.d/www.conf
 
-RUN chmod +x /etc/configure.sh && /etc/configure.sh
+RUN chmod +x /etc/configure.sh
 COPY VERSION /etc/VERSION
 EXPOSE 8080
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor.conf"]
