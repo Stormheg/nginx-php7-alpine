@@ -5,7 +5,9 @@ IMAGE=nginx-php7-alpine
 
 if [ -z "$1" ]
 then
-    $1="patch"
+    OPERATION="patch"
+else
+    OPERATION=$1
 fi
 
 docker run --rm -v ${PWD}:/app treeder/bump@sha256:384d148edc0012013bb42568baf2931ec05c4394509920c951a12c21347a69a5 $1
