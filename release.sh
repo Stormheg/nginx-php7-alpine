@@ -3,7 +3,7 @@ set -ex
 USERNAME=stormheg
 IMAGE=nginx-php7-alpine
 
-f [ -z "$1" ]
+if [ -z "$1" ]
 then
     $1=patch
 fi
