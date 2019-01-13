@@ -82,6 +82,15 @@ http {
 		root /app/public;
 		index index.php;
 
+		location / {
+			try_files $uri $uri/ /index.php$is_args$args;
+		}
+
+		location ~* ^.+.(bmp|css|eot|ico|jpeg|jpg|js|json|otf|png|svg|ttf|webm|woff|woff2)$ {
+			log_not_found off;
+			access_log off;
+		}
+
 		location ~ \.php$ {
 			fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
 			fastcgi_index index.php;
@@ -90,6 +99,7 @@ http {
 			fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 			fastcgi_param SCRIPT_NAME $fastcgi_script_name;
 		}
+
 		location ~ /\. {
 			access_log off;
 			log_not_found off;
