@@ -1,3 +1,4 @@
+# release script
 set -ex
 
 USERNAME=stormheg
@@ -12,7 +13,7 @@ docker run --rm -v ${PWD}:/app treeder/bump@sha256:384d148edc0012013bb42568baf29
 version=`cat VERSION`
 echo "Version: $version"
 
-# Build image
+# build image
 ./build.sh
 
 # tag it
