@@ -12,10 +12,12 @@ You can easily tweak a few nginx and php configuration options by setting enviro
 
 
 ## The PRE_START task
+The pre_start.sh script located in /etc/pre_start.sh is run by supervisor before php-fpm and nginx are started.
 
+You may append any commands you want executed when the container starts
 
 ## Variables
-Currently teakable variables are:
+Currently teakable variables are: \
 `PHP_MEMORY_LIMIT` default: 128mb \
 `PHP_UPLOAD_MAX_FILESIZE` default: 20mb \
 `PHP_POST_MAX_SIZE` default: 20mb \
