@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 RUN mkdir -p /run/nginx/ /run/php-fpm/ /app/public/
 RUN apk --update --no-cache add argon2 argon2-dev curl supervisor \
