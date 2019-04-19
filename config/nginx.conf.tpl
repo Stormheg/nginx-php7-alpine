@@ -62,7 +62,7 @@ http {
 	gzip_vary on;
 
 	# Enable checking the existence of precompressed files.
-	gzip_static ${NGINX_GZIP_STATIC:-off};
+	gzip_static ${NGINX_GZIP_STATIC:-on};
 
 
 	# Specifies the main log format.
@@ -89,6 +89,12 @@ http {
 		location ~* ^.+.(bmp|css|eot|ico|jpeg|jpg|js|json|otf|png|svg|ttf|webm|woff|woff2)$ {
 			log_not_found off;
 			access_log off;
+		}
+
+		# These files are usually public and should be cached
+		location ~* ^.+.(css|eot|ico|js|otf|ttf|woff|woff2)$ {
+			expires max;
+			add_header Cache-Control public;
 		}
 
 		location ~ \.php$ {
