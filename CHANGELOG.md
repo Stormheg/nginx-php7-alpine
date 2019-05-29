@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.0
+- Update PHP to 7.2.18
+
+## 1.4.0
+
+Update dependencies
+
 ## 1.3.0
 
 - Update Alpine base layer to version 3.9
