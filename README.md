@@ -1,4 +1,6 @@
 # nginx-php7-alpine
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 A simple Docker container running PHP
 
 ## Introduction
